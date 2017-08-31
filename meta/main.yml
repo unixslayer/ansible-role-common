@@ -1,0 +1,15 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: unixslayer
+  description: Initial tasks for ubuntu server
+  license: "license (BSD, MIT)"
+  min_ansible_version: 1.9
+  platforms:
+    - name: Ubuntu
+      versions:
+      - all
+  galaxy_tags:
+    - ubuntu
+    - common
