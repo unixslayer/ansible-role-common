@@ -1,21 +1,13 @@
 ---
 - name: update apt-cache
   apt:
-      update_cache: yes
-
-- name: install aptitude
-  apt:
-      pkg: 'aptitude'
-
-- name: upgrade the distro
-  apt:
-      upgrade: yes
+    update_cache: yes
 
 - name: install packages
   apt:
-      pkg: "{{ item }}"
-      state: 'latest'
-  with_items:
+    pkg: "{{ item }}"
+    state: 'latest'
+    with_items:
       - sudo
       - bash-completion
       - python-pycurl
