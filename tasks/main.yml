@@ -1,20 +1,23 @@
 ---
-- name: update apt-cache
+- name: Include variables.
+  include_vars: "main.yml"
+
+- name: Define packages.
+  set_fact:
+    packages: "{{ __packages | list }}"
+  when: packages is not defined
+
+- name: Define extra packages.
+  set_fact:
+    packages: "{{ packages | list + packages_extra | list }}"
+  when: packages_extra is defined
+
+- name: Update apt-cache
   apt:
     update_cache: yes
 
-- name: install packages
+- name: Install packages
   apt:
     pkg: "{{ item }}"
     state: 'latest'
-    with_items:
-      - sudo
-      - bash-completion
-      - python-pycurl
-      - htop
-      - tree
-      - vim
-      - curl
-      - zip
-      - wget
-      - mc
+    with_items: "{{ packages }}"

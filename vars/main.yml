@@ -1,0 +1,12 @@
+---
+__packages:
+  - sudo
+  - bash-completion
+  - python-pycurl
+  - htop
+  - tree
+  - vim
+  - curl
+  - zip
+  - wget
+  - mc
