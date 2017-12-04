@@ -10,3 +10,4 @@ __packages:
   - zip
   - wget
   - mc
+  - sendmail
