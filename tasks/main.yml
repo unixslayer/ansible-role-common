@@ -5,7 +5,6 @@
 - name: Define packages.
   set_fact:
     packages: "{{ __packages | list }}"
-  when: packages is not defined
 
 - name: Define extra packages.
   set_fact:
@@ -20,4 +19,4 @@
   apt:
     pkg: "{{ item }}"
     state: 'latest'
-    with_items: "{{ packages }}"
+  with_items: "{{ packages }}"
